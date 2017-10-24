@@ -12,6 +12,7 @@ Grid divided into Halves, Thirds, Quarters, Fifths, Sixths ,etc...
 ![equilateral grids](diagrams/equilateral-grids.svg)
 ### Golden Ratio
 ![golden ratio grid](https://upload.wikimedia.org/wikipedia/commons/3/32/Golden_ratio_grid.svg)
+
 Grid based on [Golden Ratio][Golden Ratio wiki article] derived from [Fibonacci sequence][Fibonacci wiki article] where the next number in the sequence is equal to the sum of the last two numbers. Roughly 1:1.61803
 ## Layout Methods
 ### Asymmetrically
