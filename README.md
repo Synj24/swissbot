@@ -3,7 +3,7 @@
 
 Generating compositions in the [International Typographic Style][I.T.S. wiki article]
 
-![flow chart](diagrams/swissbot-flowchart.svg)
+![flow chart](diagrams/swissbot-flowchart.png)
 ## Colour
 Colour palettes are generated using the [colormind.io API][http://colormind.io/api-access/]
 ## Grid Systems
