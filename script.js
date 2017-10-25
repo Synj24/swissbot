@@ -76,11 +76,15 @@ function drawResult() {
 
 }
 
-getPallete();
-getDim();
+
+setInterval(function(){
+	getPallete();
+	getDim();
 
 setTimeout(function() {
 	displayComposData();
 	doGrid(0);
 	drawResult();
 }, 500);
+
+}, 15000);
