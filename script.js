@@ -10,6 +10,11 @@ function getPallete() {
 		// input : [[44,43,44],[90,83,82],"N","N","N"]
 	}
 
+	// Mixed Content:
+	// The page at 'https://synj24.github.io/swissbot/index.html' was loaded over HTTPS,
+	// but requested an insecure XMLHttpRequest endpoint 'http://colormind.io/api/'.
+	// This request has been blocked; the content must be served over HTTPS.
+
 	var http = new XMLHttpRequest();
 
 	http.onreadystatechange = function() {
@@ -77,7 +82,7 @@ function drawResult() {
 }
 
 
-setInterval(function(){
+// setInterval(function(){
 	getPallete();
 	getDim();
 
@@ -87,4 +92,4 @@ setTimeout(function() {
 	drawResult();
 }, 500);
 
-}, 15000);
+// }, 15000);
