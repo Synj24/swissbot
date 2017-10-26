@@ -1,6 +1,11 @@
 const CANVAS = document.querySelector("#composition");
 const LOGO = document.querySelector("#logo");
 const GENERATE = document.querySelector("#generate");
+const PAL0 = document.querySelector("#pal-1");
+const PAL1 = document.querySelector("#pal-2");
+const PAL2 = document.querySelector("#pal-3");
+const PAL3 = document.querySelector("#pal-4");
+const PAL4 = document.querySelector("#pal-5");
 var compos = {};
 var grid = {};
 
@@ -63,12 +68,20 @@ function drawResult() {
 
   console.log(pal);
 
+  PAL0.style.backgroundColor = pal[0];
+  PAL1.style.backgroundColor = pal[1];
+  PAL2.style.backgroundColor = pal[2];
+  PAL3.style.backgroundColor = pal[3];
+  PAL4.style.backgroundColor = pal[4];
+
   LOGO.style.color = pal[0];
-  GENERATE.style.backgroundColor = pal[1];
+  GENERATE.style.color = pal[0];
+  GENERATE.style.backgroundColor = pal[3];
 
   CANVAS.setAttribute("width", compos.width);
   CANVAS.setAttribute("height", compos.height);
 
+  // Background
   ctx.fillStyle = pal[0];
   ctx.fillRect(0,0,CANVAS.width,CANVAS.height);
 

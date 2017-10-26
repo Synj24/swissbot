@@ -37,6 +37,17 @@
       padding: 2px;
       margin: 10px 0px 10px 89px;
     }
+    #palette {
+      margin: 10px 0px 10px 89px;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+    #palette > div {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
     canvas {
       padding: 50px;
     }
@@ -56,6 +67,13 @@
     <h1 id="logo">SwissBot</h1>
     <section class="interface">
       <button id="generate" onclick="generate()">generate</button>
+      <div id="palette">
+        <div id="pal-1"></div>
+        <div id="pal-2"></div>
+        <div id="pal-3"></div>
+        <div id="pal-4"></div>
+        <div id="pal-5"></div>
+      </div>
     </section>
   </header>
   <main>
