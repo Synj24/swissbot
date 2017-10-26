@@ -90,6 +90,6 @@ setTimeout(function() {
 	displayComposData();
 	doGrid(0);
 	drawResult();
-}, 500);
+}, 1500);
 
 // }, 15000);
