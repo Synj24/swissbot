@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Swissbot</title>
+  <meta charset="UTF-8">
+  <title>Swissbot</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla|Questrial|Roboto" rel="stylesheet">
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    body {
+      background-color: #e2e2e2;
+    }
+    header {
+      background-color: #b7b7b7;
+    }
+    h1 {
+      color: #cecece;
+      font-family: 'Roboto', sans-serif;
+      padding: 20px 0px 20px 90px;
+      /*font-family: 'Karla', sans-serif;*/
+      /*font-family: 'Questrial', sans-serif;*/
+    }
+    main {
+      height: 100%;
+    }
+    .interface {
+      padding: 5px;
+      background-color: #b7b7b7;
+    }
+    button {
+      background-color: #e2e2e2;
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      border-style: none;
+      padding: 2px;
+      margin: 10px 0px 10px 89px;
+    }
+    canvas {
+      padding: 50px;
+    }
+    .disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .centre {
+      display: block;
+      margin: auto;
+    }
+
+  </style>
 </head>
 <body>
-	<!-- <h1>Swissbot</h1> -->
-	<canvas id="composition"></canvas>
+  <header>
+    <h1 id="logo">SwissBot</h1>
+    <section class="interface">
+      <button id="generate" onclick="generate()">generate</button>
+    </section>
+  </header>
+  <main>
+    <canvas class="centre" id="composition"></canvas>
+  </main>
 </body>
 <script src="script.js"></script>
 </html>
