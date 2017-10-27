@@ -11,7 +11,6 @@
 const LOGO      = document.querySelector("#logo");
 const WIDTH     = document.querySelector("#width");
 const HEIGHT    = document.querySelector("#height");
-const GENERATE  = document.querySelector("#generate");
 const CANVAS    = document.querySelector("#composition");
 const PAL0      = document.querySelector("#pal-1");
 const PAL1      = document.querySelector("#pal-2");
@@ -91,8 +90,6 @@ function drawResult() {
   PAL4.style.backgroundColor = pal[4];
 
   LOGO.style.color = pal[0];
-  GENERATE.style.color = pal[0];
-  GENERATE.style.backgroundColor = pal[3];
 
   CANVAS.setAttribute("width", compos.width);
   CANVAS.setAttribute("height", compos.height);

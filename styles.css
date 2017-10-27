@@ -21,13 +21,21 @@ main {
 .interface {
   padding: 5px;
   background-color: #b7b7b7;
+  font-family: 'Roboto', sans-serif;
 }
 button {
+  display: block;
   background-color: #e2e2e2;
-  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
-  border-style: none;
+  /*border-style: none;*/
   padding: 2px;
+  margin: 10px 0px 10px 89px;
+}
+input {
+  background-color: #e2e2e2;
+  width: 50px;
+}
+label {
   margin: 10px 0px 10px 89px;
 }
 #palette {
