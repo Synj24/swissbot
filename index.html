@@ -3,69 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Swissbot</title>
+  <meta name="description" content="A site that generates compositions inspired by swiss modernism">
+  <meta name="author" content="M.D.Gregory">
   <link href="https://fonts.googleapis.com/css?family=Karla|Questrial|Roboto" rel="stylesheet">
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-    }
-    body {
-      background-color: #e2e2e2;
-    }
-    header {
-      background-color: #b7b7b7;
-    }
-    h1 {
-      color: #cecece;
-      font-family: 'Roboto', sans-serif;
-      padding: 20px 0px 20px 90px;
-      /*font-family: 'Karla', sans-serif;*/
-      /*font-family: 'Questrial', sans-serif;*/
-    }
-    main {
-      height: 100%;
-    }
-    .interface {
-      padding: 5px;
-      background-color: #b7b7b7;
-    }
-    button {
-      background-color: #e2e2e2;
-      font-family: 'Roboto', sans-serif;
-      text-transform: uppercase;
-      border-style: none;
-      padding: 2px;
-      margin: 10px 0px 10px 89px;
-    }
-    #palette {
-      margin: 10px 0px 10px 89px;
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-    }
-    #palette > div {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-    }
-    canvas {
-      padding: 50px;
-    }
-    .disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-    .centre {
-      display: block;
-      margin: auto;
-    }
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <h1 id="logo">SwissBot</h1>
     <section class="interface">
+      <label>dimensions:
+        <input id="width" type="number" value="297" min="0"> x <input id="height" type="number" value="420" min="0">
+      </label>
       <button id="generate" onclick="generate()">generate</button>
       <div id="palette">
         <div id="pal-1"></div>
@@ -78,6 +27,7 @@
   </header>
   <main>
     <canvas class="centre" id="composition"></canvas>
+
   </main>
 </body>
 <script src="script.js"></script>

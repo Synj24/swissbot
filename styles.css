@@ -1,0 +1,57 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: #e2e2e2;
+}
+header {
+  background-color: #b7b7b7;
+}
+h1 {
+  color: #cecece;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px 0px 20px 90px;
+  /*font-family: 'Karla', sans-serif;*/
+  /*font-family: 'Questrial', sans-serif;*/
+}
+main {
+  height: 100%;
+}
+.interface {
+  padding: 5px;
+  background-color: #b7b7b7;
+}
+button {
+  background-color: #e2e2e2;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  border-style: none;
+  padding: 2px;
+  margin: 10px 0px 10px 89px;
+}
+#palette {
+  margin: 10px 0px 10px 89px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+#palette > div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+canvas {
+  padding: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-image: url(img/pencil-throbber.gif);*/
+}
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.centre {
+  display: block;
+  margin: auto;
+}

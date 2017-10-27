@@ -1,26 +1,37 @@
-const CANVAS = document.querySelector("#composition");
-const LOGO = document.querySelector("#logo");
-const GENERATE = document.querySelector("#generate");
-const PAL0 = document.querySelector("#pal-1");
-const PAL1 = document.querySelector("#pal-2");
-const PAL2 = document.querySelector("#pal-3");
-const PAL3 = document.querySelector("#pal-4");
-const PAL4 = document.querySelector("#pal-5");
-var compos = {};
-var grid = {};
+/**************************************************/
+/*                  _         _           _       */
+/*     _____      _(_)___ ___| |__   ___ | |_     */
+/*    / __\ \ /\ / / / __/ __| '_ \ / _ \| __|    */
+/*    \__ \\ V  V /| \__ \__ \ |_) | (_) | |_     */
+/*    |___/ \_/\_/ |_|___/___/_.__/ \___/ \__|    */
+/*                                                */
+/**************************************************/
 
+// View definitions
+const LOGO      = document.querySelector("#logo");
+const WIDTH     = document.querySelector("#width");
+const HEIGHT    = document.querySelector("#height");
+const GENERATE  = document.querySelector("#generate");
+const CANVAS    = document.querySelector("#composition");
+const PAL0      = document.querySelector("#pal-1");
+const PAL1      = document.querySelector("#pal-2");
+const PAL2      = document.querySelector("#pal-3");
+const PAL3      = document.querySelector("#pal-4");
+const PAL4      = document.querySelector("#pal-5");
+
+// This is the object that will become our composition
+var compos  = {};
+var grid    = {};
+var ctx     = CANVAS.getContext("2d");
+
+// Get pallete from colormind and store it in the compos object
 function getPallete() {
   var url = "http://colormind.io/api/";
   var data = {
     model : "default",
-    // To get color suggestions with input, label blank fields with the "N" character:
+    // To get color suggestions with input from colormind, label blank fields with the "N" character:
     // input : [[44,43,44],[90,83,82],"N","N","N"]
   }
-
-  // Mixed Content:
-  // The page at 'https://synj24.github.io/swissbot/index.html' was loaded over HTTPS,
-  // but requested an insecure XMLHttpRequest endpoint 'http://colormind.io/api/'.
-  // This request has been blocked; the content must be served over HTTPS.
 
   var http = new XMLHttpRequest();
 
@@ -35,11 +46,16 @@ function getPallete() {
   http.send(JSON.stringify(data));
 }
 
+// Clear the canvas and display the loading gif
+function clearResult() { ctx.clearRect(0, 0, CANVAS.width, CANVAS.height); }
+function doLoader() { CANVAS.style.backgroundImage = "url(img/pencil-throbber.gif)"; }
+
+// Get the canvas dimensions from the input fields
 function getDim() {
-  // A3 Paper size except in pixels not mm
-  compos.width  = 297;
-  compos.height = 420;
+  compos.width  = WIDTH.value;
+  compos.height = HEIGHT.value;
 }
+
 
 function doGrid(type) {
   grid.width = compos.width;
@@ -50,14 +66,15 @@ function doGrid(type) {
   }
 }
 
+// Function used for logging debug data to console
 function displayComposData() {
   console.log(compos);
-  console.log(compos.palette);
 }
+
 
 function drawResult() {
   var padding = 25;
-  var ctx = CANVAS.getContext("2d");
+  
   var pal = [
   "rgb("+compos.palette[0][0]+","+compos.palette[0][1]+","+compos.palette[0][2]+")",
   "rgb("+compos.palette[1][0]+","+compos.palette[1][1]+","+compos.palette[1][2]+")",
@@ -66,7 +83,6 @@ function drawResult() {
   "rgb("+compos.palette[4][0]+","+compos.palette[4][1]+","+compos.palette[4][2]+")",
   ];
 
-  console.log(pal);
 
   PAL0.style.backgroundColor = pal[0];
   PAL1.style.backgroundColor = pal[1];
@@ -96,20 +112,19 @@ function drawResult() {
 
   ctx.fillStyle = pal[4];
   ctx.fillRect(0+padding*4,0+padding*4,CANVAS.width-padding*8,CANVAS.height-padding*8);
-
 }
 
-
-// setInterval(function(){
+//Generate output, variables must be populated before the result is drawn.
 function generate() {
+  clearResult()
+  doLoader();
   console.log("generating...");
   getPallete();
   getDim();
 
   setTimeout(function() {
-    displayComposData();
     doGrid(0);
     drawResult();
+    displayComposData();
   }, 1500);
 }
-// }, 15000);
